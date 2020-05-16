@@ -1,0 +1,33 @@
+.visitingCard {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: white;
+  &__photo {
+    width: 170px;
+    height: 170px;
+    float: left;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  &__name {
+    margin-top: 0.2rem;
+    font-family: "Pacifico", cursive;
+    font-size: 1.4rem;
+    display: inline-block;
+  }
+  &__specialization {
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    float: right;
+  }
+  &__phoneNumber {
+    font-family: "Pacifico", cursive;
+  }
+  &:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}

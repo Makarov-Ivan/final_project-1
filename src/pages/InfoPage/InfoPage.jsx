@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { VisitingCard } from "../../components/visitingCard/visitingCard";
+import { staffSpec } from "./staffSpec";
 
 export const InfoPage = () => {
   let [staff, setStaff] = useState([]);
@@ -10,18 +12,21 @@ export const InfoPage = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+  staff.forEach((item, i) => (item.spec = staffSpec[i]));
   console.log(staff);
-
   return (
     <div className='infoPage'>
-      <h2>This is info page</h2>
+      <h2>Наши мастера</h2>
       <ul>
         {staff.map((item, i) => {
           return (
-            <li key={i}>
-              {item.name.first}
-              {item.name.last}
-            </li>
+            <VisitingCard {...item} />
+            // <li key={i}>
+            //   {item.name.first}
+            //   {item.name.last}
+            //   <p>{staffSpec[i]}</p>
+            //   <img src={item.picture.medium} alt={item.name.first} />
+            // </li>
           );
         })}
       </ul>
