@@ -17,19 +17,17 @@ export const InfoPage = () => {
   return (
     <div className='infoPage'>
       <h2>Наши мастера</h2>
-      <ul>
-        {staff.map((item, i) => {
-          return (
-            <VisitingCard {...item} />
-            // <li key={i}>
-            //   {item.name.first}
-            //   {item.name.last}
-            //   <p>{staffSpec[i]}</p>
-            //   <img src={item.picture.medium} alt={item.name.first} />
-            // </li>
-          );
-        })}
-      </ul>
+      {staff.map((item, i) => {
+        return (
+          <VisitingCard {...item} key={i} />
+          // <li key={i}>
+          //   {item.name.first}
+          //   {item.name.last}
+          //   <p>{staffSpec[i]}</p>
+          //   <img src={item.picture.medium} alt={item.name.first} />
+          // </li>
+        );
+      })}
     </div>
   );
 };

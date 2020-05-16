@@ -9,7 +9,7 @@ export const VisitingCard = ({
 }) => {
   return (
     <div className='visitingCard'>
-      <img src={large} alt='' class='visitingCard__photo' />
+      <img src={large} alt='' className='visitingCard__photo' />
       <h4 className='visitingCard__name'>{`${first} ${last}`}</h4>
       <p className='visitingCard__specialization'>{spec}</p>
       <p className='visitingCard__phoneNumber'>{cell}</p>
