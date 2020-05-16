@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { ModalWindow } from "./cardModal";
+
 import "./card.scss";
 import "./cardModal.scss";
 
@@ -35,40 +37,17 @@ export const CardComponent = ({
           <p className='card__description'>{serviceDescription}</p>
         </div>
       </figure>
-      {/* <figure className='card'>
-        <img src={serviceImg} alt='' className='card__pic' />
-        <button
-          className='card__modalButton'
-          onClick={() => {
-            ModalSet([
-              "cardModal cardModal_active",
-              "cardModalOverlay cardModalOverlay_active",
-            ]);
-          }}>
-          Просмотр
-        </button>
-        <figcaption className='card__content'>
-          <h5 className='card__title'>{serviceName}</h5>
-          <p className='card__price'>{servicePrice}</p>
-          <p className='card__description'>{serviceDescription}</p>
-        </figcaption>
-      </figure> */}
+
       {/* this is modal window */}
-      <div className={Modal[0]}>
-        <div className='cardModal__header'>
-          <h3 className='cardModal__title'>{serviceName}</h3>
-          <p className='cardModal__brend'>Barber</p>
-          <button
-            className='cardModal__closeButton'
-            onClick={() => ModalSet(["cardModal", "cardModalOverlay"])}>
-            &times;
-          </button>
-        </div>
-        <div className='cardModal__content'>
-          {serviceDescriptionFull ? serviceDescriptionFull : serviceDescription}
-        </div>
-      </div>
-      <div className={Modal[1]}></div>
+
+      <ModalWindow
+        style={Modal}
+        title={serviceName}
+        descriptionFull={
+          serviceDescriptionFull ? serviceDescriptionFull : serviceDescription
+        }
+        fn={() => ModalSet(["cardModal", "cardModalOverlay"])}
+      />
     </React.Fragment>
   );
 };
