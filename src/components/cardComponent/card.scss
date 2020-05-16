@@ -31,4 +31,26 @@
     color: white;
     cursor: pointer;
   }
+  &__info {
+    padding: 0 5px;
+  }
+  &__title {
+    float: left;
+    font-family: "Pacifico", cursive;
+  }
+  &__price {
+    font-family: "Pacifico", cursive;
+    float: right;
+    text-align: right;
+    color: red;
+    font-style: oblique;
+    &:after {
+      content: " \20BD";
+    }
+  }
+  &__description:before {
+    display: table;
+    clear: both;
+    content: "";
+  }
 }

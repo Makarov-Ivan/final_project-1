@@ -29,10 +29,10 @@ export const CardComponent = ({
             просмотр
           </button>
         </div>
-        <div className='info'>
-          <h5>{serviceName}</h5>
-          <p className='price'>{servicePrice}</p>
-          <p className='description'>{serviceDescription}</p>
+        <div className='card__info'>
+          <h5 className='card__title'>{serviceName}</h5>
+          <p className='card__price'>{servicePrice}</p>
+          <p className='card__description'>{serviceDescription}</p>
         </div>
       </figure>
       {/* <figure className='card'>
