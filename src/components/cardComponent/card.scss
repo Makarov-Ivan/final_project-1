@@ -1,0 +1,36 @@
+.card {
+  float: left;
+  width: 30%;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid black;
+  background-color: white;
+  height: 40vh;
+  margin: 0.8rem;
+  &__price:after {
+    content: " \20BD";
+  }
+  &__title {
+    font-size: 1.5rem;
+  }
+  &__pic {
+    width: 100%;
+  }
+  &__modalButton {
+    width: 100%;
+    height: 1.5rem;
+    border: none;
+    background: rgba(50, 50, 50, 0.5);
+    visibility: hidden;
+    transform: translateY(-1.5rem);
+    transition: 500ms ease-in-out;
+    color: white;
+  }
+  &__content {
+    padding-top: max;
+    padding-bottom: 0;
+  }
+}
+.card__pic:hover + .card__modalButton {
+  visibility: visible;
+}
