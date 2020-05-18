@@ -5,7 +5,11 @@ import { staffSpec } from "./staffSpec";
 export const InfoPage = () => {
   let [staff, setStaff] = useState([]);
   useEffect(() => {
-    fetch("https://randomuser.me/api/?results=5&gender=female&nat=US")
+    fetch(
+      "https://randomuser.me/api/?results=" +
+        staffSpec.length +
+        "&gender=female&nat=US"
+    )
       .then((res) => res.json())
       .then(({ results }) => {
         setStaff(results);
