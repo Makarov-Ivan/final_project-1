@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { ModalWindow } from "./cardModal";
 
 import "./card.scss";
-import "./cardModal.scss";
 
 export const CardComponent = ({
   serviceImg,
