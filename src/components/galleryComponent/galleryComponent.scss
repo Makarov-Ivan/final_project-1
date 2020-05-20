@@ -1,0 +1,45 @@
+.gallery {
+  margin: 15px 0 0 0;
+  padding: 0;
+  &__title {
+    font-family: "Pacifico", cursive;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+@mixin btn {
+  margin: 0;
+  height: 150px;
+  width: 50px;
+  border: none;
+  background-color: rgba(94, 91, 91, 0.05);
+  font-size: 1.25rem;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease-out;
+  &:hover {
+    outline: black solid 1px;
+    background-color: rgba(94, 91, 91, 0.658);
+  }
+}
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 450px;
+
+  &__BtnLeft {
+    @include btn;
+  }
+  &__BtnRight {
+    @include btn;
+  }
+  &__pic {
+    height: 80vh;
+    max-height: 450px;
+  }
+}
