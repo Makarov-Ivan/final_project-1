@@ -1,0 +1,12 @@
+.greeting {
+  display: block;
+  text-align: center;
+  padding: 0;
+  background-color: black;
+  color: whitesmoke;
+  height: 400px;
+  line-height: 400px;
+  & > span {
+    font-family: "Pacifico", cursive;
+  }
+}
