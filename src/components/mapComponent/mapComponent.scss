@@ -1,0 +1,29 @@
+.siteMap {
+  margin: 0;
+  padding: 15px 10px;
+  &__header {
+    font-family: "Pacifico", cursive;
+    text-align: center;
+  }
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    display: block;
+    margin: 5px 0;
+    padding: 0 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: whitesmoke;
+  }
+  &__link {
+    font-family: "Pacifico", cursive;
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+    text-transform: capitalize;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
