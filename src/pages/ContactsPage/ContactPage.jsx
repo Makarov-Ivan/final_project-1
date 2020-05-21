@@ -1,5 +1,7 @@
 import React from "react";
 
+import { MapComponent } from "../../components/mapComponent/googleMapComponent";
+
 export const ContactPage = () => {
   return (
     <div className='contactPage'>

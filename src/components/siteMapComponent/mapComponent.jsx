@@ -1,5 +1,5 @@
 import React from "react";
-import { MapComponentItem } from "../mapComponentItem/mapComponentItem";
+import { MapComponentItem } from "../siteMapComponentItem/mapComponentItem";
 
 import { NavbarContent } from "../navbar/navbarContent";
 
