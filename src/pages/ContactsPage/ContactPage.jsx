@@ -3,6 +3,8 @@ import React from "react";
 import { MapComponent } from "../../components/mapComponent/googleMapComponent";
 import { ContactNumber } from "../../components/contactNumberComponent/contactNumberComponent";
 import { Adress } from "../../components/adressComponent/adressComponent";
+import { Schedule } from "../../components/scheduleComponent/scheduleComponent";
+
 export const ContactPage = () => {
   return (
     <div className='contactPage'>
@@ -10,6 +12,7 @@ export const ContactPage = () => {
       <MapComponent />
       <ContactNumber />
       <Adress />
+      <Schedule />
     </div>
   );
 };
