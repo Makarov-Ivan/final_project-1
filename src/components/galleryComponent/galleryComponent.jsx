@@ -13,7 +13,10 @@ export const GalleryComponent = () => {
         <button
           className='carousel__BtnLeft'
           onClick={() => {
-            setIndex(index < 0 ? (index = Photos.length - 1) : index--);
+            setIndex(() => {
+              console.log(index);
+              return index < 1 ? (index = Photos.length - 1) : index--;
+            });
           }}>
           &lt;
         </button>
@@ -27,7 +30,7 @@ export const GalleryComponent = () => {
         <button
           className='carousel__BtnRight'
           onClick={() => {
-            setIndex(index++);
+            setIndex(index + 1);
           }}>
           &gt;
         </button>
