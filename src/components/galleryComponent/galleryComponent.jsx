@@ -14,7 +14,6 @@ export const GalleryComponent = () => {
           className='carousel__BtnLeft'
           onClick={() => {
             setIndex(() => {
-              console.log(index);
               return index < 1 ? (index = Photos.length - 1) : index--;
             });
           }}>
