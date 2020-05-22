@@ -1,33 +1,13 @@
+@import "../../style/contactBlocks";
 .contactNumberBlock {
-  margin: 0;
-  padding: 10;
-  float: left;
-  width: 30%;
+  @include block;
   &__title {
-    display: block;
-    margin: 0 auto;
-    font-size: 1.2rem;
-    font-family: "Pacifico", cursive;
+    @include title;
   }
   &__callButton {
-    display: block;
-    box-sizing: border-box;
-    font-family: "Pacifico", cursive;
-    border: 1px solid rgba(61, 53, 53, 0.61);
-    height: 3rem;
-    width: 80%;
-    background-color: rgba(36, 34, 34, 0.61);
-    cursor: pointer;
-    color: white;
-    text-align: center;
-    line-height: 3rem;
-    text-decoration: none;
-    &:hover {
-      background-color: rgba(36, 34, 34, 0.863);
-      border: 1px solid rgb(36, 34, 34);
-    }
+    @include btn;
   }
   &__number {
-    text-align: center;
+    @include content;
   }
 }

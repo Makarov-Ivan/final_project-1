@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./ContactPage.scss";
+
 import { MapComponent } from "../../components/mapComponent/googleMapComponent";
 import { ContactNumber } from "../../components/contactNumberComponent/contactNumberComponent";
 import { Adress } from "../../components/adressComponent/adressComponent";

@@ -1,0 +1,38 @@
+//$ for vars
+$height: auto;
+$width: 30%;
+$titleText: "Pacifico", cursive;
+@mixin block {
+  display: block;
+  margin: 0;
+  padding: 10;
+  width: $width;
+  height: $height;
+}
+@mixin title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: $titleText;
+}
+@mixin btn {
+  display: block;
+  margin: 0 auto 25px;
+  box-sizing: border-box;
+  font-family: $titleText;
+  border: 1px solid rgba(61, 53, 53, 0.61);
+  height: 3rem;
+  width: 80%;
+  background-color: rgba(36, 34, 34, 0.61);
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  line-height: 3rem;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(36, 34, 34, 0.863);
+    border: 1px solid rgb(36, 34, 34);
+  }
+}
+@mixin content {
+  text-align: center;
+}

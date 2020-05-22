@@ -1,0 +1,14 @@
+@import "../../style/contactBlocks";
+
+.scheduleBlock {
+  @include block;
+  &__title {
+    @include title;
+  }
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    @include content;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../style/contactBlocks";
+
+.adressBlock {
+  @include block;
+  &__title {
+    @include title;
+  }
+  &__button {
+    @include btn;
+  }
+  &__adress {
+    @include content;
+  }
+}
