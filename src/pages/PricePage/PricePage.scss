@@ -1,7 +1,9 @@
 .pricePage {
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: space-between;
+  &__cradList {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
 }
