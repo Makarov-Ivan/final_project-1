@@ -28,25 +28,27 @@ export const PricePage = () => {
   return (
     <div className='pricePage'>
       {/* <h2>This is price page</h2> */}
-      <SearchBox
-        onChange={(e) => {
-          setSearchedServs(e.target.value);
-        }}
-      />
-      <CheckBox
-        gender='male'
-        text='Мужские'
-        onChange={(e) => {
-          setMale(e.target.checked);
-        }}
-      />
-      <CheckBox
-        gender='female'
-        text='Женские'
-        onChange={(e) => {
-          setFemale(e.target.checked);
-        }}
-      />
+      <div className='pricePage__selectors'>
+        <SearchBox
+          onChange={(e) => {
+            setSearchedServs(e.target.value);
+          }}
+        />
+        <CheckBox
+          gender='male'
+          text='Мужские'
+          onChange={(e) => {
+            setMale(e.target.checked);
+          }}
+        />
+        <CheckBox
+          gender='female'
+          text='Женские'
+          onChange={(e) => {
+            setFemale(e.target.checked);
+          }}
+        />
+      </div>
       <div className='pricePage__cradList'>
         {filteredServs.map((item, i) => {
           return <CardComponent {...item} key={i} />;

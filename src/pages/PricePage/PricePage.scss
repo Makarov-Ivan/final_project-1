@@ -6,4 +6,10 @@
     flex-wrap: wrap;
     align-content: space-between;
   }
+  &__selectors {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+  }
 }
