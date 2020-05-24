@@ -69,5 +69,15 @@ export const services = [
     serviceDescriptionFull:
       "Причёска — это форма, придаваемая волосам стрижкой, завивкой, укладкой и филировкой, подбором цветовой гаммы. Она может быть из естественных и искусственных волос с шиньонами и прядями разных цветов.",
   },
+  {
+    serviceType: 2,
+    serviceName: "Мужская",
+    servicePrice: 1500,
+    serviceImg:
+      "https://upload.wikimedia.org/wikipedia/commons/a/ac/Traditional_Japanese_wedding_hairstyle.jpg",
+    serviceDescription: "Укладка и т.д.",
+    serviceDescriptionFull:
+      "Причёска — это форма, придаваемая волосам стрижкой, завивкой, укладкой и филировкой, подбором цветовой гаммы. Она может быть из естественных и искусственных волос с шиньонами и прядями разных цветов.",
+  },
 ];
 // https://images.unsplash.com/photo-1531604269568-ad1b8de0a633?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1533&q=80
