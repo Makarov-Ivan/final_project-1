@@ -1,15 +1,29 @@
 import React, { useState } from "react";
 import { CardComponent } from "../../components/cardComponent/cardComponent";
 import { SearchBox } from "../../components/searchBox/searchComponent";
+import { CheckBox } from "../../components/servicesSelector/checkBox";
+
 import { services } from "./services";
 
 import "./PricePage.scss";
 export const PricePage = () => {
   const [searchedServs, setSearchedServs] = useState("");
+  const [male, setMale] = useState(true);
+  const [female, setFemale] = useState(true);
+  let filteredServs;
 
-  const filteredServs = services.filter((item) =>
-    item.serviceName.toLowerCase().includes(searchedServs.toLowerCase())
-  );
+  filteredServs = services.filter((item) => {
+    return (
+      item.serviceName.toLowerCase().includes(searchedServs.toLowerCase()) &&
+      (male
+        ? female
+          ? true
+          : item.serviceType === 2
+        : female
+        ? item.serviceType === 1
+        : false)
+    );
+  });
 
   return (
     <div className='pricePage'>
@@ -17,6 +31,20 @@ export const PricePage = () => {
       <SearchBox
         onChange={(e) => {
           setSearchedServs(e.target.value);
+        }}
+      />
+      <CheckBox
+        gender='male'
+        text='Мужские'
+        onChange={(e) => {
+          setMale(e.target.checked);
+        }}
+      />
+      <CheckBox
+        gender='female'
+        text='Женские'
+        onChange={(e) => {
+          setFemale(e.target.checked);
         }}
       />
       <div className='pricePage__cradList'>
