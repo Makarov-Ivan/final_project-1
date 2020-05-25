@@ -6,7 +6,7 @@ import { signIn as arr } from "./Reg";
 export const Registration = () => {
   return (
     <React.Fragment>
-      <p>this is registration form</p>
+      <h3>Зарегистрироваться</h3>
       <form
         action=''
         onSubmit={(e) => {

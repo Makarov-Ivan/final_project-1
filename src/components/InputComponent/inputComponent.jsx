@@ -1,5 +1,4 @@
 import React from "react";
-
 export const Input = ({ label, name, type, value }) => {
   return (
     <div className='input'>

@@ -5,7 +5,7 @@ import { EnterForm } from "./ent";
 export const Enter = () => {
   return (
     <React.Fragment>
-      this is enter form
+      <h3>Войти</h3>
       <form
         action=''
         onSubmit={(e) => {
