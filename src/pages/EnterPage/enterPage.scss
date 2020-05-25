@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 5px 15px;
+  flex-wrap: wrap;
   & > h2 {
     display: none;
   }
@@ -25,6 +26,12 @@
         align-items: stretch;
         margin: 0;
       }
+    }
+  }
+  &__aboutRegistration {
+    width: 100%;
+    & > p > span {
+      font-family: "Pacifico", cursive;
     }
   }
 }

@@ -14,6 +14,14 @@ export const EnterPage = () => {
       <div className='enterPage__enterForm'>
         <Enter />
       </div>
+      <div className='enterPage__aboutRegistration'>
+        <h3>Для чего нужна регистрация</h3>
+        <p>
+          Благодаря регистрации вы сможете записываться и отписываться от услуг,
+          получать консультации по времени и услуге по телефону, получать
+          рассылку новостоей от <span>Barber</span>
+        </p>
+      </div>
     </div>
   );
 };
