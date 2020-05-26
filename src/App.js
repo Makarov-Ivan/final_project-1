@@ -8,11 +8,10 @@ import { Main } from "./components/main/Main";
 
 import { staffSpec } from "./pages/InfoPage/staffSpec";
 
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 function App() {
   let [staff, setStaff] = useState([]);
-  let [user, setUser] = useState(null);
 
   //fetch staff list
   useEffect(() => {
@@ -28,18 +27,23 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  //sign in with google
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      setUser(user);
-    });
-  }, []);
-
   //add some data to staff list
   staff.forEach((item, i) => (item.spec = staffSpec[i]));
 
-  //logging user
-  useEffect(() => console.log(user), [user]);
+  let [user, setUser] = useState(null);
+  useEffect(() => {
+    auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        userRef.onSnapshot((snapshot) => {
+          setUser({
+            id: snapshot.id,
+            ...snapshot.data(),
+          });
+        });
+      }
+    });
+  });
 
   return (
     <ContextUser.Provider value={{ user }}>
