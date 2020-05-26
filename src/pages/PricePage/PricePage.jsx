@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CardComponent } from "../../components/cardComponent/cardComponent";
 import { SearchBox } from "../../components/searchBox/searchComponent";
 import { CheckBox } from "../../components/servicesSelector/checkBox";
+import { MapComponent } from "../../components/siteMapComponent/mapComponent";
 
 import { services } from "./services";
 
@@ -54,6 +55,7 @@ export const PricePage = () => {
           return <CardComponent {...item} key={i} />;
         })}
       </div>
+      <MapComponent />
     </div>
   );
 };

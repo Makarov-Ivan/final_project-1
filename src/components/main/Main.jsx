@@ -1,5 +1,7 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
+
+import { ContextPath } from "../../context";
 
 import { HomePage } from "../../pages/HomePage/HomePage";
 import { NewsPage } from "../../pages/NewsPage/NewsPage";
@@ -11,18 +13,22 @@ import { NotFound } from "../../pages/NotFound/NotFound";
 import "./main.scss";
 
 export const Main = () => {
-  return (
-    <main>
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route path='/info' component={InfoPage} />
-        <Route path='/news' component={NewsPage} />
-        <Route path='/price' component={PricePage} />
-        <Route path='/contacts' component={ContactPage} />
-        <Route path='/enter' component={EnterPage} />
+  const { pathname } = useLocation();
 
-        <Route component={NotFound} />
-      </Switch>
-    </main>
+  return (
+    <ContextPath.Provider value={{ pathname }}>
+      <main>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/info' component={InfoPage} />
+          <Route path='/news' component={NewsPage} />
+          <Route path='/price' component={PricePage} />
+          <Route path='/contacts' component={ContactPage} />
+          <Route path='/enter' component={EnterPage} />
+
+          <Route component={NotFound} />
+        </Switch>
+      </main>
+    </ContextPath.Provider>
   );
 };

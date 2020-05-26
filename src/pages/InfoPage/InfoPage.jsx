@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { VisitingCard } from "../../components/visitingCard/visitingCard";
+import { MapComponent } from "../../components/siteMapComponent/mapComponent";
 
-import { Context } from "../../App";
+import { ContextStaff } from "../../context";
 
 export const InfoPage = () => {
-  const { staff } = useContext(Context);
+  const { staff } = useContext(ContextStaff);
   console.log(staff);
   return (
     <div className='infoPage'>
@@ -12,6 +13,7 @@ export const InfoPage = () => {
       {staff.map((item, i) => {
         return <VisitingCard {...item} key={i} />;
       })}
+      <MapComponent />
     </div>
   );
 };

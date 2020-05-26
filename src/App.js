@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
+import { ContextStaff } from "./context";
+
 import Navbar from "./components/navbar/Navbar";
 import { Main } from "./components/main/Main";
 
 import { staffSpec } from "./pages/InfoPage/staffSpec";
 
-export const Context = React.createContext();
 function App() {
   let [staff, setStaff] = useState([]);
   useEffect(() => {
@@ -24,14 +25,14 @@ function App() {
   staff.forEach((item, i) => (item.spec = staffSpec[i]));
 
   return (
-    <Context.Provider value={{ staff }}>
+    <ContextStaff.Provider value={{ staff }}>
       <React.Fragment>
         <Router>
           <Navbar />
           <Main />
         </Router>
       </React.Fragment>
-    </Context.Provider>
+    </ContextStaff.Provider>
   );
 }
 export default App;
