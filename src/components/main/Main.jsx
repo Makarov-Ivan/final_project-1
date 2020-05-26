@@ -9,6 +9,7 @@ import { InfoPage } from "../../pages/InfoPage/InfoPage";
 import { PricePage } from "../../pages/PricePage/PricePage";
 import { ContactPage } from "../../pages/ContactsPage/ContactPage";
 import { EnterPage } from "../../pages/EnterPage/EnterPage";
+import { Personal } from "../../pages/Personal/Personal";
 import { NotFound } from "../../pages/NotFound/NotFound";
 import "./main.scss";
 
@@ -25,6 +26,7 @@ export const Main = () => {
           <Route path='/price' component={PricePage} />
           <Route path='/contacts' component={ContactPage} />
           <Route path='/enter' component={EnterPage} />
+          <Route path='/personal' component={Personal} />
 
           <Route component={NotFound} />
         </Switch>
