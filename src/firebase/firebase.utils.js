@@ -61,6 +61,20 @@ export const addOrder = async (user, orderName, orderDate) => {
   }
 };
 
+export const getOrders = async (user) => {
+  const output = [];
+  firestore
+    .doc(`user/${user.uid ? user.uid : user.id}`)
+    .collection("order")
+    .get()
+    .then((snapshot) => {
+      snapshot.forEach((el) => {
+        output.push(el.data());
+      });
+    });
+  return output;
+};
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();

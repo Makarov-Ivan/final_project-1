@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Input } from "../InputComponent/inputComponent";
+// import { Input } from "../InputComponent/inputComponent";
 
-import { EnterForm } from "./ent";
+// import { EnterForm } from "./ent";
 
 import { signInWithGoogle, auth } from "../../firebase/firebase.utils";
 
