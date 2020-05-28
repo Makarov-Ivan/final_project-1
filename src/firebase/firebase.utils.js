@@ -13,26 +13,40 @@ const config = {
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  if (!userAuth) return;
   const userRef = firestore.doc(`user/${userAuth.uid}`);
-  const snapShot = await userRef.get();
-  if (!snapShot.exist) {
-    const { displayName, email, phoneNumber } = userAuth;
 
-    try {
-      await userRef.set({
-        displayName,
-        email,
-        phoneNumber,
-        ...additionalData,
-      });
-    } catch (error) {
-      console.log("error ", error);
-    }
+  const { displayName, email, phoneNumber } = userAuth;
+
+  try {
+    await userRef.set({
+      displayName,
+      email,
+      phoneNumber,
+      ...additionalData,
+    });
+    console.log("user prof document created");
+  } catch (error) {
+    console.log("error ", error);
   }
-  console.log(userRef);
 
   return userRef;
+};
+
+export const addNameAndPhoneNumberToUserProfileDoc = async (
+  user,
+  name,
+  phone
+) => {
+  const userRef = await firestore.doc(`user/${user.uid}`);
+  try {
+    await userRef.update({
+      displayName: name,
+      phoneNumber: phone,
+    });
+    console.log("data edded");
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 firebase.initializeApp(config);

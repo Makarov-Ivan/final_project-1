@@ -43,7 +43,7 @@ function App() {
         });
       }
     });
-  });
+  }, []);
 
   return (
     <ContextUser.Provider value={{ user }}>
