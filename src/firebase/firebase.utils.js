@@ -37,7 +37,7 @@ export const addNameAndPhoneNumberToUserProfileDoc = async (
   name,
   phone
 ) => {
-  const userRef = await firestore.doc(`user/${user.uid}`);
+  const userRef = await firestore.doc(`user/${user.uid ? user.uid : user.id}`);
   try {
     await userRef.update({
       displayName: name,
