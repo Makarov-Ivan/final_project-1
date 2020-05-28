@@ -49,6 +49,18 @@ export const addNameAndPhoneNumberToUserProfileDoc = async (
   }
 };
 
+export const addOrder = async (user, orderName, orderDate) => {
+  try {
+    const userRef = firestore.doc(`user/${user.uid ? user.uid : user.id}`);
+    await userRef.collection("order").doc(orderName).set({
+      name: orderName,
+      date: orderDate,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
